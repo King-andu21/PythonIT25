@@ -1,3 +1,4 @@
+# Andre Pook (King_Andu)
 import turtle
 import time
 turtle.speed(10)
