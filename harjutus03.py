@@ -1,5 +1,6 @@
 # Autor: Andre Pook
 import turtle
+turtle.speed(0)
 #---o---
 
 # Harjutus 3.1 (Tervitus)
@@ -59,7 +60,9 @@ kylje_pikkus = 50
 nurk = 90
 kujund_värv = "red"
 drawing = 0
-kordaja = 1.5
+nihe = 1.5
+turtle.penup()
+turtle.goto(-100,0)
 turtle.color(kujund_värv)
 for drawing in range(3):
     turtle.pendown()
@@ -72,7 +75,7 @@ for drawing in range(3):
     turtle.forward(kylje_pikkus)
     turtle.left(nurk)
     turtle.penup()
-    turtle.forward(kylje_pikkus*kordaja)
+    turtle.forward(kylje_pikkus*nihe)
 #---o---
 
 # Harjutus 3.7 (Python Turtle kolmnurk)
@@ -81,17 +84,14 @@ for drawing in range(3):
 kylje_pikkus = 50
 nurk = 120
 kujund_värv = "blue"
-drawing = 0
-kordaja = 1.5
+kordaja = 3
+nihe = 1.5
 turtle.color(kujund_värv)
-for drawing in range(3):
-    turtle.pendown()
-    turtle.forward(kylje_pikkus)
-    turtle.left(nurk)
-    turtle.forward(kylje_pikkus)
-    turtle.left(nurk)
-    turtle.forward(kylje_pikkus)
-    turtle.left(nurk)
+for _ in range(kordaja):
+    for _ in range(kordaja):
+        turtle.pendown()
+        turtle.forward(kylje_pikkus)
+        turtle.left(nurk)
     turtle.penup()
-    turtle.forward(kylje_pikkus*kordaja)
+    turtle.forward(kylje_pikkus*nihe)
 turtle.done()
