@@ -1,7 +1,3 @@
-# Loo muutuja, mis sisaldab kuulsat tsitaati. Koosta uus string, mis sisaldab tsitaati koos autori
-# nimega. Kasuta selleks erinevaid jutumärke: näiteks tsitaat ühekordsete jutumärkidega ja kogu
-# lause topeltjutumärkidega või vastupidi. Veendu, et vormistus on korrektne ja tsitaat on selgelt
-# eristatud.
 # ---o---
 # 2.
 # ---o---
