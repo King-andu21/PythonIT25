@@ -2,6 +2,9 @@
 # nimega. Kasuta selleks erinevaid jutumärke: näiteks tsitaat ühekordsete jutumärkidega ja kogu
 # lause topeltjutumärkidega või vastupidi. Veendu, et vormistus on korrektne ja tsitaat on selgelt
 # eristatud.
+# ---o---
+# 2.
+# ---o---
 tsitaat = 'William Randolph Hearst "Piisavalt suur pealkiri teeb iga uudise suureks."'
 print (tsitaat)
 # ---o---
@@ -54,7 +57,8 @@ for x in tulemused:
 # ---o---
 # 14.
 # ---o---
-vanus = int(input("Mis on su vanus: "))
+vanus = 1
+# vanus = int(input("Mis on su vanus: "))
 piletityyp = "soodus"
 if piletityyp == "tais":
     if vanus < 18:
@@ -98,3 +102,18 @@ temps = [[5, 8, 12, 10, 7, 9, 11, 14, 16, 13, 10, 6, 4, 3, 2, 4, 6, 8, 10, 12, 1
 20, 22, 21, 19, 16, 13],
 [10, 13, 16, 18, 20, 22, 23, 24, 21, 18, 15, 13, 11, 10, 9, 12, 15, 18, 20,
 23, 25, 27, 26, 24, 21, 18]]
+kuud = "Jaanuar, Veebruar, Märts, Aprill, Mai, Juuni, Juuli, August, September, Oktoober, November, Detsember"
+kuud= kuud.split(", ")
+sel = 0
+max_temp = 0
+min_temp = 1000
+for i in temps:
+    print(f"{kuud[sel]} Keskmine temp: {round(sum(temps[sel]) / float(len(temps[sel])),1)}")
+    if max(i) > max_temp:
+        max_temp = max(i)
+        max_temp_i = kuud[sel]
+    if min(i) < min_temp:
+        min_temp = min(i)
+        min_temp_i = kuud[sel]
+    sel += 1
+print(f"Kõige kuumem kuu oli {max_temp} C {max_temp_i}, Kõige külmem kuu oli {min_temp} C {min_temp_i}")
