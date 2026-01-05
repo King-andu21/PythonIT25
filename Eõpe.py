@@ -22,6 +22,9 @@ for i in range(4):
     turtle.right(90)
     turtle.forward(mustri_suurus)
 
+turtle.penup()
+turtle.goto(-300, 200)
+turtle.pendown()
 # ---
 # Teine Muster
 # ---
