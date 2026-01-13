@@ -160,6 +160,8 @@ for i in ev_data:
     if a >= 2:
         keskmine_range += int(i[1])
         keskmine_hind += int(i[2])
+a -= 1
 keskmine_range = round(keskmine_range/a)
 keskmine_hind = round(keskmine_hind/a)
+
 print(f"\033[0;32;40m keskmine range on: \033[1;30;42m{keskmine_range}, \033[0;32;40mKeskmine hind on: \033[1;30;43m{keskmine_hind} \033[0m")
