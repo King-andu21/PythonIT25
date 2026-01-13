@@ -141,6 +141,7 @@ print (f"kokku: {sum(sum_list)}")
 a = 0
 keskmine_range = 0
 keskmine_hind = 0
+kolmsada_range_autod = []
 ev_data = [
 ['vehicle', 'range', 'price'],
 ['Tesla Model Y Long Range', '330', '58990'],
@@ -160,8 +161,20 @@ for i in ev_data:
     if a >= 2:
         keskmine_range += int(i[1])
         keskmine_hind += int(i[2])
+        if int(i[1]) > 300:
+            kolmsada_range_autod.append(i[0])
 a -= 1
 keskmine_range = round(keskmine_range/a)
 keskmine_hind = round(keskmine_hind/a)
 
+max_koef = 1000000000000
+parim_auto = ""
 print(f"\033[0;32;40m keskmine range on: \033[1;30;42m{keskmine_range}, \033[0;32;40mKeskmine hind on: \033[1;30;43m{keskmine_hind} \033[0m")
+print("--------------------")
+for i in range(1,len(ev_data)):
+    koef = (int(ev_data[i][2])/int(ev_data[i][1]))
+    if koef < max_koef:
+        max_koef = koef
+        parim_auto = ev_data[i][0]
+print(f"parima auto koefitsent: {max_koef}")
+print(f"parim auto: {parim_auto}")
