@@ -1,5 +1,5 @@
 chosen_file = input("Sisesta failinimi: ")
-f = open(chosen_file , encoding="UTF-8")
+f = open(f"Python_IT25_Uus/files/{chosen_file}" , encoding="UTF-8")
 def pronksikarva_summa():
     value = 0
     for i in f:

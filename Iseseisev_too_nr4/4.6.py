@@ -1,4 +1,3 @@
-time = "24.02.2020"
 
 print(list)
 def get_month_name(number):

@@ -1,4 +1,4 @@
-f = open("rebased.txt", encoding="UTF-8")
+f = open("Python_IT25_Uus/files/rebased.txt", encoding="UTF-8")
 
 vastuvõetud = []
 
