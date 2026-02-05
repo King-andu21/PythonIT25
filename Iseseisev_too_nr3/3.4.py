@@ -1,8 +1,17 @@
+import os
+print(os.listdir('.'))
 chosen_file = input("Sisesta failinimi: ")
 f = open(chosen_file, encoding="UTF-8")
+jark = 0
 for rida in f:
+    print(f"{jark}. {rida}")
     jark += 1
-    print(f"{jark}{rida}")
 chosen_song = int(input("Valige laulu järjekorranumber: "))
-print(f[chosen_song])
+
+jark = 0
+f = open(chosen_file, encoding="UTF-8",)
+for rida in f:
+    if chosen_song == jark:
+        print(f"{jark}. {rida}")
+    jark += 1
 f.close()
