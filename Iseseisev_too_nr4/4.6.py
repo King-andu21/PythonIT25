@@ -1,30 +1,8 @@
 
 print(list)
+months = ["Jaanuar", "Veebruar", "Märts", "Aprill", "Mai", "Juuni", "Juuli", "August", "September", "Oktoober", "November", "Detsember"]
 def get_month_name(number):
-    if number == 1:
-        month_name = "Jaanuar"
-    if number == 2:
-        month_name = "Veebruar"
-    if number == 3:
-        month_name = "Märts"
-    if number == 4:
-        month_name = "Aprill"
-    if number == 5:
-        month_name = "Mai"
-    if number == 6:
-        month_name = "Juuni"
-    if number == 7:
-        month_name = "Juuli"
-    if number == 8:
-        month_name = "August"
-    if number == 9:
-        month_name = "September"
-    if number == 10:
-        month_name = "Oktoober"
-    if number == 11:
-        month_name = "November"
-    if number == 12:
-        month_name = "Detsember"
+    month_name = months[number-1]
     return month_name
 def time_convert_to_formatted(time):
     list = time.split(".")
