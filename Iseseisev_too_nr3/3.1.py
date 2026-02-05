@@ -6,7 +6,6 @@ for rida in f:
     vastuvõetud.append(int(rida))
 
 f.close()
-print(vastuvõetud)
 chosen_year = int(input("Palun sisestage, millise aasta andmeid vajate: "))
 index = chosen_year-2011
 
