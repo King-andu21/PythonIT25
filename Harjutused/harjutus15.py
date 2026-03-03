@@ -1,10 +1,11 @@
 import turtle
 import random
 
+skoor = 0
 aken = turtle.Screen()
 aken.bgcolor("lightblue")
 aken.setup(width=600, height=600)
-aken.tracer(0)  # Keelab automaatse ekraani värskenduse
+aken.tracer(0)
 
 
 
@@ -12,8 +13,8 @@ aken.tracer(0)  # Keelab automaatse ekraani värskenduse
 # ristkülik
 #
 ristkylik = turtle.Turtle()
-ristkylik.shape("square")  # loome ruudu
-ristkylik.shapesize(stretch_wid=1, stretch_len=5)  # Venitame ristkülikuks
+ristkylik.shape("square")
+ristkylik.shapesize(stretch_wid=1, stretch_len=5) 
 ristkylik.penup()
 ristkylik.color("black")
 ristkylik.goto(ristkylik.xcor(), -250)
@@ -38,31 +39,56 @@ ring = turtle.Turtle()
 ring.shape("circle")
 ring.penup()
 ring.speed('fastest')
+ring.setheading(random.randint(0, 360))
 
 # ringi kiirus ja nurk
 kiirus = 2
 ring.setheading(random.randint(0,360))
 
 def peegelda_porkumisel():
+    global skoor
+    global kiirus
     nurk = ring.heading()
-    if ring.xcor() >= 300 or ring.xcor() <= -300:  # Põrkumine vasakult või paremalt
+    if ring.xcor() >= 300 or ring.xcor() <= -300:
         uus_nurk = 180 - nurk
         if uus_nurk < 0:
             uus_nurk += 360
         ring.setheading(uus_nurk)
-    if ring.ycor() >= 300 or ring.ycor() <= -300:  # Põrkumine ülalt või alt
+    if ring.ycor() >= 300 or ring.ycor() <= -300:
+        uus_nurk = 360 - nurk
+        ring.setheading(uus_nurk)
+    if ring.ycor()<=-300:
+        print("Game Over")
+        turtle.bye()
+    x = ristkylik.xcor()
+    y = ristkylik.ycor()
+    if (y + 10 >= ring.ycor() and ring.ycor() >= y - 10) and (x + 50 >= ring.xcor() and ring.xcor() >= x - 50):
+      if (ring.ycor() <= y and ring.ycor()+5 >= y) and (ring.xcor() <= x and ring.xcor()+100 >= x):
+        print("collision")
+        kiirus+=1
+        skoor+=1
+        #skoori kuvamine
+        turtle.hideturtle()
+        turtle.clear()
+        turtle.penup()
+        turtle.goto(-250,200)
+        turtle.pendown()
+        turtle.write(skoor, font=("Arial", 30, "normal"))
+        print("Skoor:",skoor)
         uus_nurk = 360 - nurk
         ring.setheading(uus_nurk)
 
 def ring_liigu():
-    ring.forward(kiirus)
+    global kiirus
+    y_kiirus = ring.ycor()
+    print(y_kiirus)
+    if y_kiirus > 0:
+        ring.forward(round(kiirus+(y_kiirus/50)))
+    else: 
+        ring.forward(round(kiirus*1.1))
     peegelda_porkumisel()
-    aken.update()  # Värskenda ekraani pärast liikumist
-    aken.ontimer(ring_liigu, 20)  # `ring_liigu` käivitamine 20ms pärast
-
-def ristkyliku_kokkuporkamine():
-    # if ring.xcor() =
-    nurk = ring.heading
+    aken.update()
+    aken.ontimer(ring_liigu, 20)
 
 ring_liigu()
 
