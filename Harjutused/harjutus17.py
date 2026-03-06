@@ -19,7 +19,6 @@ with open("PythonIT25/harjutus17_files/palgad.txt", encoding="UTF-8") as fail:
         else:
             naised_kokku += 1
 
-
     
 print(f"mehed kokku: {mehed_kokku}")
 print(f"Naised kokku: {naised_kokku}")
