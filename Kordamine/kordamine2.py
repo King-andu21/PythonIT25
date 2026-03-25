@@ -39,7 +39,7 @@ if response.status_code == 200:
 else:
     print("Viga andmete allalaadimisel:", response.status_code)
 #print(response.json())
-print(f"Kõige kallim toode: {hp_name}, {highest_price}")
-print(f"toodete kogus:{tooted_amount}")
+print(f"filtreeritud Kõige kallim toode: {hp_name}, {highest_price}")
+print(f"eri toodete kogus kogu laos: {tooted_amount}")
 print(f"filtreeritud toodete kogus: {tooted_20amount}")
-print(f"keskmine toote hind: {avarege_price}")
+print(f"filtreeritud keskmine toote hind: {avarege_price}")
